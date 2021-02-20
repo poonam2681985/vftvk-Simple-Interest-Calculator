@@ -3,12 +3,10 @@ div{
    background-color: white;
 text-align: justify;
   width: 500px;
-  height: 500px;
+  height: 400px;
   cell-padding: 50px;
   padding: 30px;
   margin: 50px;
  border-radius: 12px;
 }
 h1{color:gray;}
-
-

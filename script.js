@@ -1,9 +1,3 @@
-var principal = 0;
-var interestRate = 0;
-var termOfLoan = 0;
-var amount = 0;
-
-
 function updateSlider(slideAmount)
 {
 var sliderDiv = document.getElementById("result");
@@ -13,9 +7,10 @@ sliderDiv.innerHTML = slideAmount;
 function compute(){
 event.preventDefault();   
   var principal = parseFloat(document.getElementById("principal").value);
-if(principal<0)
+
+if(principal<=0 || document.getElementById("principal").value.length == 0)
 	{
-        alert("enter positive number in amount");
+        alert("enter a positive number in amount");
         document.getElementById("principal").focus();
         }
 else
@@ -27,10 +22,11 @@ else
   var simpleInt = principal * interestRate * termOfLoan;
   var amount = principal + simpleInt;
   var years = d.getFullYear() + termOfLoan;
-  document.getElementById("s1").innerHTML = "if you deposit:" + principal;
-  document.getElementById("s2").innerHTML = "At an Interest Rate of :" + interestRate1 + "%";
-  document.getElementById("s3").innerHTML = "You will receive an amount of :" + amount;
-  document.getElementById("s4").innerHTML = "In the year of :" + years;
+  document.getElementById("s1").innerHTML = "if you deposit:<mark>" + principal+"</mark>";
+  document.getElementById("s2").innerHTML = "At an Interest Rate of :<mark>" + interestRate1 + "%"+"</mark>";
+  document.getElementById("s3").innerHTML = "You will receive an amount of :<mark>" + amount+"</mark>";
+  document.getElementById("s4").innerHTML = "In the year of :<mark>" + years+"</mark>";
+
 }
 }
       
